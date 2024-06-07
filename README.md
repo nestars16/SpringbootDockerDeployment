@@ -184,3 +184,18 @@ Elige la imagen que subiste
 Haz click en aqui para permitir solicitudes sin autenticacion
 ![](https://i.postimg.cc/c1PfhPnw/Screenshot-2024-06-07-001557.png) 
 _ASEGURATE DE DEJAR 1 MAXIMO PARA EVITAR COSTOS_
+
+## Limitaciones
+
+Cabe recalcar que, este metodo no es prático para la aplicación, dado que no
+estamos desplegando un binario que se ejecuta en el servidor en conjunto con nuestra
+instancia de base de datos, si no que le estamos proporcionando una imagen a un servicio de contenedroes
+que sabe como instanciar un contenedor con la imagen que nosotros construimos.
+
+Es decir que no existe una instancia central de la aplicación, existen cuantas
+instancias sean necesarias para cumplir con el trafico que tiene el servicio
+
+En nuestro caso como pusimos la maxima instancia como 0 es posible que nuestra
+instancia sea apagada si no hay trafico y dependiendo de las configuraciones
+puede hacer que se pierda los datos de tu aplicación y en general comportamiento
+no esperado
