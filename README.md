@@ -187,15 +187,23 @@ _ASEGURATE DE DEJAR 1 MAXIMO PARA EVITAR COSTOS_
 
 ## Limitaciones
 
-Cabe recalcar que, este metodo no es prático para la aplicación, dado que no
+Cabe recalcar que, este metodo no es práctico para la aplicación, dado que no
 estamos desplegando un binario que se ejecuta en el servidor en conjunto con nuestra
-instancia de base de datos, si no que le estamos proporcionando una imagen a un servicio de contenedroes
+instancia de una base de datos, si no que le estamos proporcionando una imagen a un servicio 
 que sabe como instanciar un contenedor con la imagen que nosotros construimos.
 
-Es decir que no existe una instancia central de la aplicación, existen cuantas
-instancias sean necesarias para cumplir con el trafico que tiene el servicio
+Es decir que no existe una instancias central de la aplicación, existen cuantas
+instancias sean necesarias para cumplir con servir al trafico que tiene el servicio,
+que dado por la configuración de el servicio, tambien poseen una instalación propia de
+MS SQL Server.
 
-En nuestro caso como pusimos la maxima instancia como 0 es posible que nuestra
-instancia sea apagada si no hay trafico y dependiendo de las configuraciones
-puede hacer que se pierda los datos de tu aplicación y en general comportamiento
-no esperado
+En nuestro caso como pusimos el maximo número instancias como 0 es posible que nuestro
+contenedor sea apagado si no hay trafico, lo que significa que se tendrá
+que reinstanciar un contenedor lo cual implica que no se persisten los archivos
+de la base de datos, para tener un control separado de esto tendria que hacerse
+una instancia separada que esta fuera de el ámbito de el curso
+
+Google Cloud Run estima sus gastos basado en la cantidad de segundos de cpu utiliza
+tu aplicación, es decir mantener una aplicación ejecutandose continuamente es mucho mas caro
+que unicamente escalarla a necesidad en nuestro caso que solo se utilizará para demonstracion
+, a pesar de no ser ideal, es util para demonstración y prueba
