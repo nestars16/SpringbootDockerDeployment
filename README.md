@@ -1,7 +1,7 @@
-# Contenedorización de Aplicación Springboot en java
+i$# Contenedorización de Aplicación Springboot en java
 
 En este respositorio podran lograr ver una aplicación de prueba
-de springboot para demonstrar como contenerizar nuestr aplicación
+de springboot para demonstrar como contenerizar nuestra aplicación
 
 ## Pre-requisitos 
 
